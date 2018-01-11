@@ -135,6 +135,7 @@ if __name__ == '__main__':
 
     polibius_2_encrypted = polybius_squareus.coordinate(input_word, False, 2).upper()
     polibius_2_decrypted = polybius_squareus.coordinate(polibius_2_encrypted, True, 2).upper()
+    
     print('Введенное слово                  '
           '{}\nЗашифованое слово Методом 1      '
           '{}\nЗашифованое слово Методом 2      '
