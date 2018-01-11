@@ -1,4 +1,5 @@
 class PolybiusSquare:
+
     def __init__(self, word: str):
         self.word = word
         if 65 <= min([ord(i) for i in self.word]) <= 122:
@@ -52,7 +53,7 @@ class PolybiusSquare:
         else:
             if decrypting:
                 self.answer, self.coordinate_vertical, self.coordinate_horizontal = [], [], []
-                self.change_self_b()
+                self.change_b()
                 for k in range(len(self.word)):
                     symbol = self.word[k:len(self.word) - (len(self.word) - 1 - k)]
                     self.enumeration(symbol)
@@ -69,7 +70,7 @@ class PolybiusSquare:
                     )
             else:
                 self.answer, self.coordinate_vertical, self.coordinate_horizontal = [], [], []
-                self.change_self_b()
+                self.change_b()
                 for k in range(len(self.word)):
                     symbol = self.word[k:len(self.word) - (len(self.word) - 1 - k)]
                     self.enumeration(symbol)
@@ -85,7 +86,7 @@ class PolybiusSquare:
                     )
         return ''.join(self.answer)
 
-    def change_self_b(self) -> None:
+    def change_b(self) -> None:
         print(*self.b, sep='\n', end='\n\n')
         b2 = ' '.join(self.non_repeat_word).split()
         for u in range(len(self.b)):
@@ -133,9 +134,9 @@ if __name__ == '__main__':
     polybius_1_encrypted = polybius_squareus.coordinate(input_word, False, 1)
     polybius_1_decrypted = polybius_squareus.coordinate(polybius_1_encrypted, True, 1)
 
-    polibius_2_encrypted = polybius_squareus.coordinate(input_word, False, 2).upper()
-    polibius_2_decrypted = polybius_squareus.coordinate(polibius_2_encrypted, True, 2).upper()
-    
+    polibius_2_encrypted = polybius_squareus.coordinate(input_word, False, 2)
+    polibius_2_decrypted = polybius_squareus.coordinate(polibius_2_encrypted, True, 2)
+
     print('Введенное слово                  '
           '{}\nЗашифованое слово Методом 1      '
           '{}\nЗашифованое слово Методом 2      '
